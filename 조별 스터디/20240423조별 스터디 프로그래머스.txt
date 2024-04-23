@@ -1,0 +1,123 @@
+1. 문자열 출력하기
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String a = sc.next();
+        System.out.println(a);
+    }
+}
+2. a와 b 출력하기
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        System.out.printf("a = %d\n",a);
+        System.out.printf("b = %d",b);
+    }
+}
+3. 덧셈식 출력하기
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        System.out.printf("%d + %d = %d",a,b,a + b);
+    }
+}
+4. 문자열 붙여서 출력하기
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String a = sc.next();
+        String b = sc.next();
+        System.out.println(a+b);
+    }
+}
+5. 홀짝 구분하기
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(n%2==0){
+            System.out.printf("%d is even",n);
+        }else if(n%2==1){
+            System.out.printf("%d is odd",n);
+        }
+    }
+}
+6. n의 배수
+class Solution {
+    public int solution(int num, int n) {
+        int answer=0;
+        if(num%n==0){
+            answer=1;
+        }else if(num%n!=0){
+            answer=0;
+        }
+        return answer;
+    }
+}
+7. 공배수
+class Solution {
+    public int solution(int number, int n, int m) {
+        int answer = 0;
+        //number가 n의 배수이면서 m의 배수이면 1을 아니라면
+        if(number%n==0&&number%m==0){
+            answer=1;
+        }
+        return answer;
+    }
+}
+8. 홀짝에 따라 다른값 반환하기import java.util.Scanner;
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        if(n%2==1){//홀수
+            for(int i=1;i<=n;i+=2){
+                answer+=i;
+            }
+        }else if(n%2==0){//짝수
+            for(int i=2;i<=n;i+=2){
+                answer+=i*i;
+            }
+        }
+        return answer;
+    }
+}
+9. flag 에 따라 다른 값 변환하기
+class Solution {
+    public int solution(int a, int b, boolean flag) {
+        int answer = 0;
+        if(flag==true){
+            answer=a+b;
+        }else{
+            answer=a-b;
+        }
+        return answer;
+    }
+}
+10. 주사위 게임 2
+class Solution {
+    public int solution(int a, int b, int c) {
+        int answer = 0;
+        if(a!=b && b!=c && a!=c){
+            answer=a+b+c;
+        }else if(a==b && b==c){
+            answer=(a+b+c)*(a*a+b*b+c*c)*(a*a*a+b*b*b+c*c*c);
+        }else{
+            answer=(a+b+c)*(a*a+b*b+c*c);
+        }
+        return answer;
+    }
+}
