@@ -1,0 +1,71 @@
+1. 배열의 평균값
+class Solution {
+    public double solution(int[] numbers) {
+        int total=0;
+        for (int number:numbers){
+            total+=number;
+        }
+        double answer=(double)(total)/numbers.length;
+        return answer;
+    }
+}
+2. 중앙값 구하기
+import java.util.Arrays;
+class Solution {
+    public int solution(int[] array) {
+        Arrays.sort(array);
+        int answer = array[array.length/2];
+        return answer;
+    }
+}
+3. 개미 군단
+class Solution {
+    public int solution(int hp) {
+        int answer = 0;
+        while(hp>0){
+            if(hp/5>0){
+                answer+=hp/5;
+                hp%=5;
+                System.out.printf("answer : %d, hp : %d\n",answer,hp);
+            }else if(hp/3>0){
+                answer+=hp/3;
+                hp%=3;
+                System.out.printf("answer : %d, hp : %d\n",answer,hp);
+            }else{
+                answer+=hp;
+                hp=0;
+                System.out.printf("answer : %d, hp : %d\n",answer,hp);
+            }
+        }
+        return answer;
+    }
+}
+4. 가장 큰 수 찾기
+public class Solution {
+    public int[] solution(int[] array) {
+        int max=array[0];
+        int index=0;
+        for(int i=1;i<array.length;i++){
+            if(max<array[i]){
+                max = array[i];
+                index=i;
+            }
+        }
+        int [] answer = {max,index};
+        return answer;
+    }
+}
+5. 배열의 유사도 
+class Solution {
+    public int solution(String[] s1, String[] s2) {
+        int answer = 0;
+        for (String string1 : s1){
+            for(String string2:s2){
+                if(string1.equals(string2)){
+                    answer+=1;
+                }
+            }
+        }
+        return answer;
+    }
+}
