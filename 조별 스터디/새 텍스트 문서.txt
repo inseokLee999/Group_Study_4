@@ -1,0 +1,102 @@
+웹 기초
+5. HTTP 요청 메서드
+0) OPTIONS : 요청 처리전 통신 옵션 설정 
+
+1) GET
+	-  서버의 자원 조회 / 검색
+	
+	https://search.naver.com/search.naver
+	?
+	where=nexearch
+	&
+	sm=top_hty
+	&
+	fbm=0
+	&
+	ie=utf8
+	&
+	query=블로그
+	
+	쿼리스트링(querystring)
+	
+	
+	https://dm.n-mk.kr/order?limit=20&sopt=all&skey=&idProductCategory=&dateType=createdAt&sdate=2023-10-04&edate=&orderStatus=confirmOrder&idDeliveryPolicy=12&idDesigner=14
+	
+	
+	- 요청 데이터가 주소에 포함
+	- 요청 바디는 비어 있다.
+	- DELETE
+	
+2) POST	
+	- 서버에 데이터 등록, 변경 
+	
+	요청 헤더 : Content-Type: application/x-www-form-urlencoded
+	요청 바디 : subject=%EC%A0%9C%EB%AA%A9&content=%EB%82%B4%EC%9A%A9//한글같은거를 16진수로 바꿔줘서 유실을 막음
+	URL 인코딩
+
+	참고) 최신 트렌드
+		Content-Type: application/json
+		{"키": "값", "키": "값"}
+
+	- PUT : 데이터의 전체 치환
+	- PATCH : 데이터의 부분 치환 
+	
+	
+
+개발환경 구축 
+tomcat10
+	- Servlet 6.0
+	- jakartaee 10 / jakarta.
+		- servlet api 
+		- servlet.jsp api 
+		
+	
+tomcat9,8
+	- servlet 4.0, 3.0 
+	- javaee 8 / javax..
+
+주소 인터페이스 
+API(Application Programming Interface) : 애플리케이션 프로그래밍 명세
+JDBC API
+
+
+서블릿(Servlet)
+1. 서블릿(Servlet)의 개요
+- 자바의 웹 기술 
+- jakartaee - API 명세 정의(servlet API)
+- jakarta.servlet
+- jakarta.servlet.http
+- jakarta.servlet.jsp ...
+
+2. 서블릿(Servlet) 클래스 작성하기
+3. web.xml 파일에 서블릿(Servlet) 등록하기
+4. XML 문법의 기초
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<servlet> 서블릿 구분하는 명칭
+	<servlet-name>서블릿 이름</servlet-name>
+	<servlet-class>패키지명을 포함한 전체 서블릿 클래스 경로</servlet-class>
+</servlet>
+<servlet-mapping>서블릿이 매칭하는 주소 설정
+	<servlet-name>서블릿 이름</servlet-name> 이름을 가지고 서블릿 이름을 찾는다 
+	<url-pattern>요청 URL 패턴</url-pattern>  
+</servlet-mapping>
+
+HttpServletRequest  : 요청
+
+HttpServletResponse : 응답 
+
+
+
+5. 웹 브라우저로부터 데이터 입력 받기
+
+6. init메서드와  destroy 메서드
+
+서블릿 생명 주기 
+
+객체 생성 
+init() 메서드 호출 - 1번만 호출 / 서블릿 초기화시에 해야될 작업, 설정 작업 
+
+do....(...) : 매 요청시 마다 호출 
+
+destroy() 메서드 호출 - 1 번 호출 - 서블릿 객체가 소멸 전 - 자원 해제...
